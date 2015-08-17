@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/material_blue_grey_950">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bienvenido"
+        android:textSize="50sp"
+        android:textStyle="bold|italic"
+        android:gravity="center"
+        android:textColor="@android:color/holo_green_dark" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="a la encuesta!"
+        android:textSize="40sp"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textStyle="italic"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/boton_personalizado_encuesta"
+        android:text="Comenzar"
+        android:textSize="30sp"
+        android:textColor="@android:color/white"
+        android:padding="15dp"
+        android:layout_marginTop="30dp"
+        android:onClick="pulsarBotonEncuesta_0"/>
+</LinearLayout>
