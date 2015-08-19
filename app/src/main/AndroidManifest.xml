@@ -22,6 +22,9 @@
         <activity android:name=".EncuestaActivity1"
             android:label="Encuesta activity 1"
             android:theme="@style/AppTheme"></activity>
+        <activity android:name=".EncuestaActivity2"
+            android:label="Encuesta activity 2"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

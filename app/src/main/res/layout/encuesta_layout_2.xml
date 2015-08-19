@@ -1,37 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="center"
     android:background="@color/material_blue_grey_950">
 
+<!--
+Aquí explican el tema de redimencionar imagenes usando "src" en lugar de background.
+http://stackoverflow.com/questions/2521959/how-to-scale-an-image-in-imageview-to-keep-the-aspect-ratio
+-->
+    <ImageView
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:id="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="40dp"/>
+
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bienvenido"
-        android:textSize="50sp"
-        android:textStyle="bold|italic"
-        android:gravity="center"
+        android:text="Eduardo"
+        android:id="@+id/nombreTextView2ID"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+
+        android:textSize="90sp"
         android:textColor="@android:color/holo_green_dark" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="a la encuesta!"
-        android:textSize="40sp"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:textStyle="italic"/>
-
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/boton_personalizado_encuesta"
-        android:text="Comenzar"
-        android:textSize="30sp"
-        android:textColor="@android:color/white"
-        android:padding="15dp"
-        android:layout_marginTop="30dp"
-        android:onClick="pulsarBotonEncuesta_0"/>
-</LinearLayout>
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="20"
+        android:id="@+id/edadTextView2ID"
+        android:layout_below="@+id/nombreTextView2ID"
+        android:layout_alignLeft="@+id/nombreTextView2ID"
+        android:layout_alignStart="@+id/nombreTextView2ID"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="80sp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="años"
+
+        android:layout_below="@+id/nombreTextView2ID"
+        android:layout_toRightOf="@+id/edadTextView2ID"
+        android:layout_alignBottom="@+id/edadTextView2ID"
+        android:gravity="bottom"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="30sp"/>
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hombre"
+        android:id="@+id/generoTextView2ID"
+        android:layout_below="@+id/edadTextView2ID"
+        android:layout_alignLeft="@+id/edadTextView2ID"
+        android:textSize="20sp"
+        android:textColor="@android:color/holo_green_dark"
+        android:textStyle="italic"
+        />
+
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/imageView2"
+        android:layout_below="@+id/generoTextView2ID"
+        android:layout_alignLeft="@+id/edadTextView2ID"
+        android:layout_alignStart="@+id/edadTextView2ID"
+        android:layout_marginTop="80dp"/>
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="España"
+        android:id="@+id/nacimientoTextView2ID"
+        android:textSize="70sp"
+        android:textColor="@android:color/holo_green_light"
+        android:layout_alignBottom="@+id/imageView2"
+        android:layout_centerHorizontal="true" />
+
+
+
+</RelativeLayout>

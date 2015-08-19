@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
+
     android:background="@color/material_blue_grey_950"
     >
 
@@ -34,33 +34,12 @@
             android:layout_marginRight="10dp"
             android:textColor="@android:color/white"
             android:textSize="20dp"
+            android:inputType="textCapWords"
+            android:imeOptions="actionDone"
+            android:id="@+id/nombreEditTextID"
             />
 
     </LinearLayout>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Lugar de nacimiento:"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textColor="@android:color/white"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="2"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="  Tocame!"
-        android:textSize="20dp"
-        android:textColorHint="@android:color/darker_gray"
-        android:background="@drawable/et_personalizado_1"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="10dp"
-        android:textColor="@android:color/white"
-        />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,14 +47,14 @@
         android:orientation="horizontal"
         android:layout_weight="2"
         android:layout_marginTop="15dp"
-        android:gravity="center">
+        >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Edad:"
-            android:textSize="30sp"
-
+            android:text="Fecha de nacimiento:"
+            android:textSize="20sp"
+            android:layout_marginTop="10dp"
             android:textColor="@android:color/white"
             android:layout_marginLeft="15dp"/>
 
@@ -83,19 +62,61 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="---"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:textColor="@android:color/white"
-            android:layout_marginLeft="15dp"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Seleccionar"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/edadTextViewID"/>
 
-            />
 
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edad:"
+        android:layout_gravity="left"
+        android:layout_marginLeft="15dp"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
+        android:id="@+id/edad2TextViewID"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Seleccionar fecha"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/botonSeleccionarEdadID"
+        android:onClick="pulsarBotonSeleccionarEdad"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Lugar de nacimiento:"
+        android:textSize="20sp"
+
+        android:textColor="@android:color/white"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="2"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="  Tocame!"
+        android:textSize="20sp"
+        android:textColorHint="@android:color/darker_gray"
+        android:background="@drawable/et_personalizado_1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="10dp"
+        android:textColor="@android:color/white"
+        android:imeOptions="actionDone"
+        android:inputType="textCapWords"
+        android:id="@+id/nacimientoEditTextID"
+        />
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -108,15 +129,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Género:"
-            android:textSize="30sp"
+            android:textSize="20sp"
             android:layout_marginRight="30dp"
             android:textColor="@android:color/white"
             android:layout_marginLeft="15dp"/>
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner"
+            android:layout_height="25dp"
+            android:id="@+id/spinnerEncuesta1"
             android:background="@drawable/et_personalizado_1"
             android:layout_marginRight="10dp"
             />
@@ -138,5 +159,6 @@
         android:padding="15dp"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp"
-        android:onClick="pulsarBotonEncuesta_0"/>
+        android:onClick="pulsarBotonEncuesta_0"
+        android:layout_gravity="center_horizontal" />
 </LinearLayout>
