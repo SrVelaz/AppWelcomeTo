@@ -17,16 +17,12 @@ import android.widget.Toast;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
-
-/**
- * Created by SrVelaz on 8/17/2015.
- */
 public class EncuestaActivity1 extends Activity {
 
 
     Spinner lista;
     String [] datosList = {"Seleccionar", "Hombre" , "Mujer"};
-    int edad = 0;
+    int edad = 1;
     String genero = null;
 
     @Override
@@ -104,12 +100,50 @@ public class EncuestaActivity1 extends Activity {
         TextView fechaTextView = (TextView) findViewById(R.id.edadTextViewID);
         fechaTextView.setText(sdf.format(miCalendario.getTime()));
         Calendar calendarioHoy = Calendar.getInstance();
+
+        TextView edadTextView = (TextView) findViewById(R.id.edad2TextViewID);
+        edad = calendarioHoy.get(Calendar.YEAR) - miCalendario.get(Calendar.YEAR);
+        if (calendarioHoy.get(Calendar.MONTH) < miCalendario.get(Calendar.MONTH)){
+            edad--;
+            edadTextView.setText(String.valueOf(edad) + " años");
+            Toast toast = Toast.makeText(this, "¡Fecha establecida!" , Toast.LENGTH_SHORT);
+            toast.show();
+        } else if (calendarioHoy.get(Calendar.MONTH) == miCalendario.get(Calendar.MONTH)
+                && calendarioHoy.get(Calendar.DAY_OF_MONTH) < miCalendario.get(Calendar.DAY_OF_MONTH)
+                ) {
+            edad--;
+            edadTextView.setText(String.valueOf(edad) + " años");
+            Toast toast = Toast.makeText(this, "Uiii, falta poquito para tu cumple!" , Toast.LENGTH_SHORT);
+            toast.show();
+        } else if (calendarioHoy.get(Calendar.DAY_OF_MONTH) == miCalendario.get(Calendar.DAY_OF_MONTH)){
+
+            Toast toast = Toast.makeText(this, "Felicidades recién nacido!" , Toast.LENGTH_SHORT);
+            toast.show();
+        } else if (calendarioHoy.get(Calendar.MONTH) == miCalendario.get(Calendar.MONTH)
+                && calendarioHoy.get(Calendar.DAY_OF_MONTH) > miCalendario.get(Calendar.DAY_OF_MONTH)) {
+            edadTextView.setText(String.valueOf(edad) + " años");
+            Toast toast = Toast.makeText(this, "¡Qué lástima! Ya pasó tu cumpleee" , Toast.LENGTH_SHORT);
+            toast.show();
+        }else {
+
+            Toast toast = Toast.makeText(getApplicationContext(), "Hay un pequeño problema..." , Toast.LENGTH_SHORT);
+            toast.show();
+        }
+
+
+
+        /*
         float diff = calendarioHoy.getTimeInMillis() - miCalendario.getTimeInMillis();
         //Esto no sirve. No lo redondea al minimo.
         int diffround = Math.round((diff/31536000000L)*10)/10;
         edad = diffround;
-        TextView edadTextView = (TextView) findViewById(R.id.edad2TextViewID);
-        edadTextView.append(" " + String.valueOf(diffround) + " años");
+
+
+        if (edadTextView.getText()== null) {
+            edadTextView.append(" " + String.valueOf(diffround) + " años");
+        }else{
+
+        }*/
     }
 
 
@@ -122,9 +156,10 @@ public class EncuestaActivity1 extends Activity {
         Intent intentEncuesta = new Intent(this, EncuestaActivity2.class);
         intentEncuesta.putExtra("nombre", String.valueOf(nombreEditText.getText()));
         intentEncuesta.putExtra("edad", edad);
+        //TODO La variable Edad llega a este momento con valor 0. No se a que se debe
+        //Idea es crear el Intent en los "if" de antes. PEro es muy sucio.
         intentEncuesta.putExtra("nacimiento" , String.valueOf(nacimientoEditText.getText()));
         intentEncuesta.putExtra("genero", genero);
-
         startActivity(intentEncuesta);
     }
 }

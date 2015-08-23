@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -42,16 +43,24 @@ public class MainActivity extends AppCompatActivity {
 
         final int respuesta = 1;
         Intent intentEncuesta0 = new Intent(this, EncuestaActivity.class);
-        //TODO Ojo que he incluido un "getApllicationContext ()" y no se para que se usa.
         startActivity(intentEncuesta0);
     }
 
     public void pulsarBotonUnidades(View view) {
+        Intent intent = new Intent(this, UnidadesActivity.class);
+        startActivity(intent);
     }
 
     public void pulsarBotonInfo(View view) {
+
+        Intent intent = new Intent(this, InfoActivity.class);
+        startActivity(intent);
     }
 
     public void pulsarBotonInterrogante(View view) {
+
+        Toast toast = Toast.makeText(this, "Chuupame 1 webo!", Toast.LENGTH_LONG);
+        toast.show();
+
     }
 }

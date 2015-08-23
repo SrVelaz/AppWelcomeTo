@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources>
+    <string-array name = "modelos_de_conversion">
+        <item>metro</item>
+        <item>decametro</item>
+        <item>hectometro</item>
+        <item>kilometro</item>
+
+        <item>decimetro</item>
+        <item>centimetro</item>
+        <item>milimetro</item>
+        <item>micrometro</item>
+        <item>nanometro</item>
+        <item>picometro</item>
+
+
+
+
+
+
+    </string-array>
+</resources>

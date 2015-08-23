@@ -8,12 +8,21 @@
     android:background="@color/material_blue_grey_950"
     >
 
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/encuesta_cabecera"/>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_weight="2"
-        android:layout_marginTop="15dp">
+        android:layout_marginTop="25dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -27,6 +36,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:hint="  Tocame!"
             android:textColorHint="@android:color/darker_gray"
             android:background="@drawable/et_personalizado_1"
@@ -103,12 +113,14 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:padding="5dp"
         android:hint="  Tocame!"
         android:textSize="20sp"
         android:textColorHint="@android:color/darker_gray"
         android:background="@drawable/et_personalizado_1"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
         android:textColor="@android:color/white"
         android:imeOptions="actionDone"
         android:inputType="textCapWords"
@@ -136,7 +148,7 @@
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="25dp"
+            android:layout_height="35dp"
             android:id="@+id/spinnerEncuesta1"
             android:background="@drawable/et_personalizado_1"
             android:layout_marginRight="10dp"

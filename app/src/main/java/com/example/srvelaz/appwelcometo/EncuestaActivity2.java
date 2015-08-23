@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -47,13 +49,21 @@ public class EncuestaActivity2 extends Activity {
 
 
 
+        //Establecer la imageView según si es hombre o mujer
+        ImageView avatarImageView = (ImageView) findViewById(R.id.avatarImageViewID);
+        if (generoEncuestaAcitivity2.equals("Hombre")){
+
+            avatarImageView.setImageResource(R.drawable.imagen_encuesta_hombre);
+        }else {
+            avatarImageView.setImageResource(R.drawable.imagen_encuesta_mujer);
+        }
+    }
 
 
+    public void pulsarBotonEncuesta_2(View view) {
 
-
-
-
-
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
 
     }
 }
